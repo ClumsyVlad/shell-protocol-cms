@@ -1,0 +1,52 @@
+.authors
+  display: flex
+  width: 100%
+  flex-wrap: wrap
+  column-gap: 40px
+  row-gap: 54px
+
+.authors__label
+  font-size: 14px
+  line-height: 20px
+  color: $white
+  margin-right: auto
+
+.authors__list
+  display: flex
+  flex-direction: column
+  width: 100%
+  max-width: 580px
+
+.author
+  display: flex
+  width: 100%
+
+.author + .author
+  margin-top: 54px
+
+.author__image
+  width: 80px
+  min-width: 80px
+  max-width: 80px
+  height: 80px
+  min-height: 80px
+  max-height: 80px
+  object-fit: cover
+  border-radius: 40px
+  overflow: hidden
+  margin-right: 20px
+
+.author__info
+  display: flex
+  flex-direction: column
+
+.author__name
+  font-size: 18px
+  line-height: 26px
+  font-weight: 600
+
+.author__summary
+  margin-top: 6px
+  font-size: 14px
+  line-height: 20px
+  opacity: 0.4

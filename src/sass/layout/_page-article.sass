@@ -1,0 +1,110 @@
+.section--page-article
+  margin-top: 125px
+
+.page-article
+  display: flex
+  flex-direction: column
+  width: 100%
+  max-width: 780px
+  padding: 54px 0
+
+.page-article__navigation
+  display: flex
+  align-items: center
+  width: 100%
+
+.page-article__summary
+  padding: 38px 0 34px
+  border-bottom: 1px solid #{$white}33
+
+.page-article .article
+  max-width: 100%
+
+.page-article .article__title
+  font-size: 70px
+  line-height: 70px
+
+.page-article .article__text
+  margin-top: 12px
+  font-size: 20px
+  line-height: 32px
+  opacity: 1
+
+.page-article .article__footer
+  margin-top: 34px
+
+.page-article__content
+  margin-top: 30px
+  margin-bottom: 62px
+  font-size: 16px
+  line-height: 1.625em
+  color: $white
+  width: 100%
+  max-width: 680px
+  margin-left: auto
+
+.page-article__content
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p
+    line-height: 1.375em
+    margin-bottom: 10px
+
+  h2
+    font-size: 30px
+
+  h3
+    font-size: 24px
+
+  p + p
+    margin-top: 22px
+
+  a
+    color: $blue-start
+    transition: $all
+
+    &:hover,
+    &:focus
+      color: $white
+
+  ul,
+  ol
+    list-style-position: inside
+
+  ol
+    list-style-type: decimal
+
+  ul
+    list-style-type: disc
+
+  hr
+    margin: 40px 0
+    width: 100%
+    background-color: $white
+    opacity: 0.05
+
+  figure
+    margin-bottom: 24px
+
+  img
+    width: 100%
+    object-fit: contain
+    border-radius: 20px
+    margin-top: 64px
+    margin-bottom: 20px
+
+  figcaption
+    font-size: 12px
+    line-height: 16px
+    color: $white
+    opacity: 0.4
+    min-height: 32px
+
+.page-article__authors
+  padding-top: 50px
+  border-top: 1px solid #{$white}33

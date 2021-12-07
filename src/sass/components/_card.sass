@@ -1,0 +1,39 @@
+.card
+  position: relative
+  border-radius: 20px
+  background-color: #{$blue-start}0D
+  background-size: cover
+  background-position: center center
+  background-repeat: no-repeat
+  transition: $all
+
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    border-radius: 20px
+    padding: 2px
+    background-image: $card-border
+    mask: linear-gradient(white) content-box, linear-gradient(white 0 0)
+    -webkit-mask-composite: source-out
+    mask-composite: exclude
+    transition: $all
+    pointer-events: none
+
+.card--bg-1
+  background-image: url(/static/img/card-bg-1.png)
+
+.card--bg-2
+  background-image: url(/static/img/card-bg-2.png)
+
+.card--bg-3
+  background-image: url(/static/img/card-bg-3.png)
+
+.card--bg-4
+  background-image: url(/static/img/card-bg-4.png)
+
+.card__text
+  margin-top: 20px

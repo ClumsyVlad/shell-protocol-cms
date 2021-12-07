@@ -1,0 +1,30 @@
+.pagination
+  display: flex
+  width: fit-content
+  align-items: center
+  column-gap: 10px
+
+.pagination__button
+  display: flex
+  position: relative
+  justify-content: center
+  align-items: center
+  width: 40px
+  height: 40px
+  border: 1px solid $dark2
+  border-radius: 10px
+  background-color: $dark1
+  font-size: 14px
+  line-height: 20px
+  font-weight: 600
+  color: $white
+  outline: none
+  transition: $all
+
+  &:hover,
+  &:focus
+    box-shadow: 0px 0px 24px #{$blue-start}66
+
+.pagination__button--active
+  border-color: $blue-end
+  color: $blue-start

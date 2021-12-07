@@ -1,0 +1,115 @@
+{% set postslist = collections.post %}
+<!doctype html>
+<html {% if section %} data-current="{{ section }}" {% endif %} lang="en">
+  {% include "components/head.njk" %}
+  <body class="body">
+    {% include "components/header.njk" %}
+    <main class="main">
+      {% if postslist %}
+        {% set latestposts = postslist | reverse %}
+        {% for latestpost in latestposts.slice(0,1) %}
+          <section class="section section--latest">
+            <div class="container">
+              <article class="latest-post" data-aos="zoom-in-up" data-aos-delay="150">
+                {% if latestpost.data.preview %}
+                  <div class="latest-post__image-container">
+                    <img class="latest-post__image" src="{{ latestpost.data.preview }}" alt="Preview image for an article '{{ latestpost.data.title }}'">
+                  </div>
+                {% endif %}
+                <div class="latest-post__content">
+                  <div class="latest-post__head">
+                    <ul class="tags latest-post__tags">
+                      <li class="tag latest-post__tag">Latest</li>
+                    </ul>
+                    <span class="latest-post__info">
+                      <time datetime="{{ latestpost.date | machineDate }}">
+                        {{ latestpost.date | readableDate }}
+                      </time>
+                      • 3 MIN READ
+                      {% if latestpost.data.authors %}
+                        {% for firstauthor in latestpost.data.authors.slice(0, 1) %}
+                          • {{ firstauthor.name }}
+                        {%- endfor -%}
+                      {% endif %}
+                    </span>
+                  </div>
+                  <a href="{{ latestpost.url | url }}" class="latest-post__link" title="{% if latestpost.data.title %} {{ latestpost.data.title }} {% else %} Untitled {% endif %}">
+                    <h2 class="latest-post__title">
+                      {% if latestpost.data.title %}
+                        {{ latestpost.data.title }}
+                      {% else %}
+                        Untitled
+                      {% endif %}
+                    </h2>
+                  </a>
+                  {% if latestpost.data.summary %}
+                    <p class="latest-post__text">
+                      {% if latestpost.data.summary.length > 204 %}
+                        {{ latestpost.data.summary.substring(0, 204) + '... [→]' }}
+                      {% else %}
+                        {{ latestpost.data.summary }}
+                      {% endif %}
+                    </p>
+                  {% endif %}
+                </div>
+              </article>
+            </div>
+          </section>
+        {%- endfor -%}
+      {% endif %}
+      <section data-functionality="articles" class="section section--dark section--rounded-top section--articles">
+        <div class="container">
+          <div class="articles">
+            <nav class="articles__nav">
+              <label class="input-group articles__search">
+                <svg viewbox="0 0 24 24" fill="none" color="currentColor" class="input-group__icon">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11C18 12.8867 17.2535 14.5991 16.0399 15.858C16.0062 15.884
+                      15.9738 15.9124 15.9429 15.9433C15.9121 15.9741 15.8836 16.0065 15.8577 16.0402C14.5988 17.2537 12.8866 18 11 18C7.13401
+                      18 4 14.866 4 11ZM16.6175 18.0321C15.0778 19.2636 13.1249 20 11 20C6.02944 20 2 15.9706 2 11C2 6.02944 6.02944 2 11
+                      2C15.9706 2 20 6.02944 20 11C20 13.1251 19.2635 15.0782 18.0317 16.6179L21.7071 20.2933C22.0977 20.6838 22.0977 21.317
+                      21.7071 21.7075C21.3166 22.098 20.6834 22.098 20.2929 21.7075L16.6175 18.0321Z"
+                    fill="currentColor"/>
+                </svg>
+                <input
+                  type="text"
+                  class="input input-group__input articles__input"
+                  data-functionality="articles-search"
+                  placeholder="Search for..."
+                  value="">
+              </label>
+              <div class="filters articles__filters articles__filters--hidden">
+                <span class="filters__label">Filters:</span>
+              </div>
+            </nav>
+            {% include "components/postslist.njk" %}
+          </div>
+          <div class="create create--articles">
+            <h3 class="title create__title" data-aos="fade-up">
+              Create your own Shell
+            </h3>
+            <a href="#" class="button button--primary create__button" data-aos="fade-up" data-aos-delay="50">
+              Use the app
+              <svg class="arrow" width="19" height="14" viewbox="0 0 19 14" color="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.2511 0.292893C11.8605 -0.0976311 11.2274 -0.0976311 10.8368 0.292893C10.4463 0.683417 10.4463 1.31658 10.8368
+                    1.70711L15.0414 5.91162L1 5.91162C0.447715 5.91162 0 6.35934 0 6.91162C0 7.46391 0.447715 7.91162 1 7.91162L15.0047
+                    7.91162L10.8368 12.0795C10.4463 12.4701 10.4463 13.1032 10.8368 13.4937C11.2274 13.8843 11.8605 13.8843 12.2511
+                    13.4937L18.1444 7.60042L18.8515 6.89332L18.1444 6.18621L12.2511 0.292893Z"
+                  fill="currentColor"/>
+              </svg>
+            </a>
+            <p class="text text--blue create__text" data-aos="fade-up" data-aos-delay="100">no account needed</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    {% include "components/footer.njk" %}
+  </body>
+  {% include "components/scripts.njk" %}
+  <script src="/js/blog.js"></script>
+</html>

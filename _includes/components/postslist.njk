@@ -1,0 +1,66 @@
+<ul class="articles__list">
+  {% for post in postslist | reverse %}
+    <li class="articles__item">
+      <article {% if post.url == url %} data-current="current item" {% endif %} class="article">
+        <a href="{{ post.url | url }}" class="article__link">
+          <h3 class="article__title">
+            {% if post.data.title %}
+              {{ post.data.title }}
+            {% else %}
+              Untitled
+            {% endif %}
+          </h3>
+        </a>
+        {% if post.data.summary and not post.data.layoutContent %}
+          <p class="article__text">
+            {% if (post.data.summary).length > 204 %}
+              {{ (post.data.summary).substring(0, 204) + '... [→]' }}
+            {% else %}
+              {{ post.data.summary }}
+            {% endif %}
+          </p>
+        {% endif %}
+        {% if post.data.layoutContent and not post.data.summary %}
+          <p class="article__text">
+            {% if (post.data.layoutContent | stripMD).length > 204 %}
+              {{ (post.data.layoutContent | stripMD).substring(0, 204) + '... [→]' }}
+            {% else %}
+              {{ post.data.layoutContent | stripMD }}
+            {% endif %}
+          </p>
+        {% endif %}
+         {% if post.data.layoutContent and post.data.summary %}
+          <p class="article__text">
+            {% if (post.data.summary + post.data.layoutContent | stripMD).length > 204 %}
+              {{ (post.data.summary + '. ' + post.data.layoutContent | stripMD).substring(0, 204) + '... [→]' }}
+            {% else %}
+              {{ post.data.summary + '. ' + post.data.layoutContent | stripMD }}
+            {% endif %}
+          </p>
+        {% endif %}
+        <div class="article__footer">
+          <span class="article__info">
+            <time datetime="{{ post.date | machineDate }}">
+              {{ post.date | readableDate }}
+            </time>
+            • 3 MIN READ
+            {% if post.data.authors %}
+              {% for firstauthor in post.data.authors.slice(0, 1) %}
+                • {{ firstauthor.name }}
+              {%- endfor -%}
+            {% endif %}
+          </span>
+          {% if post.data.tags %}
+            <ul class="tags article__tags">
+              {% for tag in post.data.tags %}
+                <li class="tag article__tag">
+                  {{ tag }}
+                </li>
+              {%- endfor -%}
+            </ul>
+          {% endif %}
+        </div>
+      </article>
+    </li>
+  {% endfor %}
+</ul>

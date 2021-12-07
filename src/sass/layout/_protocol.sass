@@ -1,0 +1,73 @@
+.section--protocol
+  position: relative
+  margin-top: 74px
+
+  &:after
+    top: 50%
+    right: 100%
+    width: 730px
+    height: 830px
+    transform: translate(40%, -25%) rotate(25deg)
+
+  &:before
+    top: 50%
+    left: 100%
+    width: 362px
+    height: 412px
+    transform: translate(-40%, -25%) rotate(25deg)
+
+  +media(s)
+    margin-top: 46px
+
+.protocol
+  position: relative
+  width: 100%
+
+.protocol__card
+  width: 100%
+  padding: 96px 96px 120px
+
+  +media(m)
+    padding: 24px 30px
+
+.protocol__title
+  max-width: 50%
+  font-size: 70px
+  line-height: 70px
+  text-align: left
+  margin-top: 32px
+
+  +media(m)
+    max-width: unset
+    margin-top: 0
+    font-size: 36px
+    line-height: 36px
+    text-align: center
+
+.protocol__text
+  margin-top: 26px
+  max-width: 200px
+
+  +media(m)
+    margin: 12px auto 0
+    text-align: center
+
+.protocol__button
+  margin-top: 44px
+
+  +media(m)
+    width: 100%
+    margin-top: 20px
+
+.protocol__whitepaper
+  position: absolute
+  height: 545px
+  right: 100px
+  top: 64px
+
+  +media(m)
+    position: static
+    height: 365px
+    margin: 20px auto 0
+    right: unset
+    top: unset

@@ -1,0 +1,98 @@
+.section--details
+  margin-top: 96px
+  
+  +media(s)
+    margin-top: 54px
+
+.details
+  display: flex
+  width: 100%
+  flex-wrap: wrap
+  column-gap: 20px
+  row-gap: 40px
+
+  +media(s)
+    row-gap: 20px
+
+.details__subdetails
+  margin-left: auto
+
+  +media(s)
+    margin-left: -20px
+    margin-right: -20px
+    overflow: hidden
+
+.details__subcolumns
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-evenly
+  width: 100%
+  column-gap: 20px
+  row-gap: 40px
+
+  +media(s)
+    flex-wrap: nowrap
+    justify-content: unset
+    width: auto
+    margin-top: 28px
+    padding: 0 20px 16px
+    overflow-x: scroll
+    overflow-y: hidden
+
+.details__column
+  display: flex
+  flex-direction: column
+  width: 100%
+  max-width: 280px
+  height: fit-content
+  min-height: 380px
+  padding: 28px 46px 28px 30px
+
+  +media(s)
+    min-width: 280px
+    padding: 28px 8px
+
+.details__column.card
+  padding: 48px 40px
+
+.details__column--free-bottom
+  padding-bottom: 0
+
+  +media(s)
+    min-height: unset
+    margin-left: auto
+    margin-right: auto
+
+    .details__title
+      text-align: center
+
+    .details__text
+      margin-top: 26px
+      text-align: center
+
+    .round-button
+      display: none
+
+.details__image
+  height: 100%
+  max-height: 124px
+  width: auto
+  max-width: 100%
+  object-fit: contain
+  margin-right: auto
+  margin-bottom: auto
+
+.details__image--big
+  max-height: 148px
+
+.details__title
+  font-size: 30px
+  line-height: 30px
+  text-align: left
+
+.details__title--big
+  font-size: 40px
+  line-height: 40px
+
+.details__text
+  margin-top: 20px

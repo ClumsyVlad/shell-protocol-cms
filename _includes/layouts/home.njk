@@ -1,0 +1,117 @@
+<!doctype html>
+<html {% if section %} data-current="{{ section }}" {% endif %} lang="en">
+  {% include "components/head.njk" %}
+  <body class="body">
+    {% include "components/header.njk" %}
+    <main class="main">
+      <section class="section section--hero">
+        <div class="container">
+          <div class="hero">
+            <h1 class="title hero__title" data-aos="fade-up">{{ hero.title }}</h1>
+            <p class="text hero__text" data-aos="fade-up" data-aos-delay="50">
+              {{ hero.subsciption }}
+            </p>
+            <a href="#" class="button button--primary hero__cta" data-aos="fade-up" data-aos-delay="100">
+              {{ hero.button }}
+              <svg class="arrow" width="19" height="14" viewbox="0 0 19 14" color="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.2511 0.292893C11.8605 -0.0976311 11.2274 -0.0976311 10.8368 0.292893C10.4463 0.683417 10.4463 1.31658 10.8368
+                    1.70711L15.0414 5.91162L1 5.91162C0.447715 5.91162 0 6.35934 0 6.91162C0 7.46391 0.447715 7.91162 1 7.91162L15.0047
+                    7.91162L10.8368 12.0795C10.4463 12.4701 10.4463 13.1032 10.8368 13.4937C11.2274 13.8843 11.8605 13.8843 12.2511
+                    13.4937L18.1444 7.60042L18.8515 6.89332L18.1444 6.18621L12.2511 0.292893Z"
+                  fill="currentColor"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="section section--details">
+        <div class="container">
+          <ul class="details">
+            <li class="details__column details__column--free-bottom" data-aos="fade-right" data-aos-delay="150">
+              <h2 class="title details__title details__title--big">{{ details.column1.title }}</h2>
+              <p class="text details__text">
+                {{ details.column1.description }}
+              </p>
+              <a href="#" class="round-button">
+                <svg class="arrow" width="19" height="14" viewbox="0 0 19 14" color="currentColor">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12.2511 0.292893C11.8605 -0.0976311 11.2274 -0.0976311 10.8368 0.292893C10.4463 0.683417 10.4463 1.31658 10.8368
+                      1.70711L15.0414 5.91162L1 5.91162C0.447715 5.91162 0 6.35934 0 6.91162C0 7.46391 0.447715 7.91162 1 7.91162L15.0047
+                      7.91162L10.8368 12.0795C10.4463 12.4701 10.4463 13.1032 10.8368 13.4937C11.2274 13.8843 11.8605 13.8843 12.2511
+                      13.4937L18.1444 7.60042L18.8515 6.89332L18.1444 6.18621L12.2511 0.292893Z"
+                    fill="currentColor"/>
+                </svg>
+              </a>
+            </li>
+            <li class="details__subdetails">
+              <ul class="details__subcolumns">
+                <li class="details__column card card--bg-1" data-aos="fade-up" data-aos-delay="100">
+                  <img src="/static/img/earn-image.svg" alt="Earn" class="details__image details__image--big">
+                  <h3 class="title details__title">{{ details.column2.title }}</h3>
+                  <p class="text text--blue card__text">{{ details.column2.description }}</p>
+                </li>
+                <li class="details__column card card--bg-2" data-aos="fade-up" data-aos-delay="150">
+                  <img src="/static/img/deposit-image.svg" alt="Deposit" class="details__image">
+                  <h3 class="title details__title">{{ details.column3.title }}</h3>
+                  <p class="text text--blue card__text">{{ details.column3.description }}</p>
+                </li>
+                <li class="details__column card card--bg-3" data-aos="fade-up" data-aos-delay="200">
+                  <img src="/static/img/swap-image.svg" alt="Swap" class="details__image">
+                  <h3 class="title details__title">{{ details.column4.title }}</h3>
+                  <p class="text text--blue card__text">{{ details.column4.description }}</p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section section--decoration section--protocol">
+        <div class="container">
+          <div class="protocol">
+            <div class="card card--bg-4 protocol__card" data-aos="fade-right">
+              <h3 class="title protocol__title">
+                {{ protocol.title }}
+              </h3>
+              <p class="text text--blue protocol__text">{{ protocol.description }}</p>
+              <div class="whitepaper protocol__whitepaper" data-aos="zoom-in-up" data-aos-delay="150">
+                <div class="whitepaper__wrapper">
+                  <div class="whitepaper__header">
+                    <img src="/static/img/logo-expanded.png" alt="Shell protocol" class="whitepaper__image">
+                    <span class="whitepaper__version">{{ protocol.whitepaper.version }}</span>
+                  </div>
+                  <div class="whitepaper__content">
+                    <h4 class="title whitepaper__title">{{ protocol.whitepaper.title }}</h4>
+                  </div>
+                  <div class="whitepaper__footer">
+                    <a href="#" class="whitepaper__link">{{ protocol.whitepaper.linktext }}</a>
+                  </div>
+                </div>
+              </div>
+              <a href="#" class="button button--secondary protocol__button">
+                {{ protocol.button }}
+                <svg class="arrow" width="19" height="14" viewbox="0 0 19 14" color="currentColor">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12.2511 0.292893C11.8605 -0.0976311 11.2274 -0.0976311 10.8368 0.292893C10.4463 0.683417 10.4463 1.31658 10.8368
+                      1.70711L15.0414 5.91162L1 5.91162C0.447715 5.91162 0 6.35934 0 6.91162C0 7.46391 0.447715 7.91162 1 7.91162L15.0047
+                      7.91162L10.8368 12.0795C10.4463 12.4701 10.4463 13.1032 10.8368 13.4937C11.2274 13.8843 11.8605 13.8843 12.2511
+                      13.4937L18.1444 7.60042L18.8515 6.89332L18.1444 6.18621L12.2511 0.292893Z"
+                    fill="currentColor"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      {% include "components/create.njk" %}
+    </main>
+    {% include "components/footer.njk" %}
+  </body>
+  {% include "components/scripts.njk" %}
+</html>

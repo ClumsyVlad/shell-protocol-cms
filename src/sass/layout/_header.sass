@@ -1,0 +1,80 @@
+.header
+  display: flex
+  position: fixed
+  align-items: center
+  height: 100px
+  width: 100%
+  backdrop-filter: blur(15px)
+  z-index: 10
+  transition: $all
+
+  +media(s)
+    height: 70px
+
+.header__nav
+  align-items: center
+  display: flex
+  height: 100%
+  justify-content: space-between
+  width: 100%
+
+.header__logo
+  align-items: center
+  color: $white
+  display: flex
+  max-width: 206px
+  transition: $all
+  width: 100%
+  z-index: 120
+
+  +media(s)
+    max-width: 140px
+
+.header__logo-image
+  height: auto
+  object-fit: contain
+  width: 100%
+
+.menu
+  align-items: center
+  column-gap: 20px
+  display: flex
+  width: fit-content
+
+.link
+  color: $white
+  font-size: 16px
+  font-weight: 600
+  line-height: 24px
+  padding: 8px
+  transition: $all
+
+  &:hover,
+  &:focus
+    color: $blue-start
+
+.header .menu.header__menu
+
+  &.is-active
+    opacity: 1
+    transform: translateX(0%)
+
+  +media(s)
+    align-items: center
+    column-gap: 0
+    flex-direction: column
+    height: 100vh
+    justify-content: start
+    position: fixed
+    top: 0
+    right: 0
+    row-gap: 24px
+    width: 100%
+    padding: 184px 24px 48px
+    z-index: 100
+    opacity: 0
+    background-image: url(/static/img/card-bg-3.png)
+    background-size: 110% 110%
+    background-position: center center
+    transform: translateX(100%)
+    transition: transform 0s ease, opacity 0.25s ease

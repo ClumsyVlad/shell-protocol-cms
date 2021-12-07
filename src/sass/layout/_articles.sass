@@ -1,0 +1,50 @@
+.section--articles
+  margin-top: 52px
+  padding-top: 44px
+  padding-bottom: 64px
+
+.articles
+  width: 100%
+  max-width: 780px
+  margin: 0 auto
+
+.articles__nav
+  max-width: 576px
+
+.articles__filters
+  margin-top: 20px
+
+.articles__filters--hidden
+  display: none
+
+.articles__filters--filtered
+  display: none
+
+.articles__list
+  display: flex
+  flex-direction: column
+  width: 100%
+  margin-top: 44px
+  row-gap: 20px
+
+.articles__item
+  position: relative
+  width: 100%
+  min-height: 275px
+  padding: 25px 0 45px
+  border-bottom: 1px solid #{$white}33
+  transition: $all
+
+  &:hover,
+  &:focus-within
+    border-color: $white
+
+.articles__item--hidden,
+.articles__item--filtered
+  display: none
+
+.articles__item .article
+  position: static
+
+.articles__pagination
+  margin-top: 60px

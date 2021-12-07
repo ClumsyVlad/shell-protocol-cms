@@ -1,0 +1,86 @@
+.burger
+  display: none
+  position: fixed
+  right: 12px
+  top: 20px
+  justify-content: center
+  align-items: center
+  width: 32px
+  height: 32px
+  padding: 6px
+  transition: all 0.25s ease
+  overflow: visible
+  cursor: pointer
+  z-index: 150
+
+  +media(s)
+    display: flex
+
+  +media(xs)
+    top: 24px
+
+.burger-box
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100%
+  position: relative
+  pointer-events: none
+
+.burger-inner
+  display: block
+  top: 50%
+  margin-top: -2px
+  pointer-events: none
+
+  &::before
+    top: -6px
+    pointer-events: none
+
+  &::after
+    bottom: -6px
+    pointer-events: none
+
+.burger-inner, .burger-inner::before, .burger-inner::after
+  width: 100%
+  height: 2px
+  background-color: #fff
+  border-radius: 1px
+  position: absolute
+  transition-property: transform
+  transition-duration: 0.15s
+  transition-timing-function: ease
+  pointer-events: none
+
+.burger-inner::before, .burger-inner::after
+  content: ''
+  display: block
+
+.burger--spin
+
+  .burger-inner
+    transition-duration: 0.22s
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19)
+
+    &::before
+      transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in
+
+    &::after
+      transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+
+  &.is-active
+    .burger-inner
+      transform: rotate(225deg)
+      transition-delay: 0.12s
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+
+      &::before
+        top: 0
+        opacity: 0
+        transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out
+
+      &::after
+        bottom: 0
+        transform: rotate(-90deg)
+        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1)

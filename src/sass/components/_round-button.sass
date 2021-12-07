@@ -1,0 +1,37 @@
+.round-button
+  display: flex
+  position: relative
+  justify-content: center
+  align-items: center
+  width: 48px
+  height: 48px
+  margin-top: auto
+  border-radius: 24px
+  box-shadow: 0px 0px 0px transparent
+  background-color: #{$blue-start}0D
+  transition: $all
+
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    border-radius: 24px
+    padding: 2px
+    background-image: $card-border
+    mask: linear-gradient(white) content-box, linear-gradient(white 0 0)
+    -webkit-mask-composite: source-out
+    mask-composite: exclude
+    transition: $all
+    pointer-events: none
+
+  &:hover,
+  &:focus
+    color: $dark1
+    background-color: $white
+    box-shadow: 0px 0px 12px $blue-end
+
+  &:active
+    transform: scale(0.95)
